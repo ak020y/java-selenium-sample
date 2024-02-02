@@ -20,7 +20,18 @@ public class BasicAuthentication {
     private WebDriver driver;
 
     public void setup() throws MalformedURLException {
-
+        ChromeOptions browserOptions = new ChromeOptions();
+browserOptions.setPlatformName("Windows 10");
+browserOptions.setBrowserVersion("122.0");
+HashMap<String, Object> ltOptions = new HashMap<String, Object>();
+ltOptions.put("username", "akumar35");
+ltOptions.put("accessKey", "lO9FTrLzpca2FYrjcSaRwUt5ouzrXyPU8sSM7V7DRxP4Mm9aqP");
+ltOptions.put("visual", true);
+ltOptions.put("project", "Untitled");
+ltOptions.put("name", "FirstTest");
+ltOptions.put("w3c", true);
+ltOptions.put("plugin", "java-java");
+browserOptions.setCapability("LT:Options", ltOptions);
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("browserName", "Chrome");
         capabilities.setCapability("browserVersion", "95");
